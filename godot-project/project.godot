@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 music_system="*res://globals/music_system/music_system.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [input]
 
 ui_pause={
