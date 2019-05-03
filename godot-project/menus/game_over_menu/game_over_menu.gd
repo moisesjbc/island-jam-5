@@ -13,7 +13,7 @@ func unpause_game():
 
 func _on_restart_button_pressed():
 	unpause_game()
-	get_tree().change_scene("res://main/main.tscn")
+	get_tree().change_scene("res://game/main/main.tscn")
 
 func _on_return_button_pressed():
 	unpause_game()
