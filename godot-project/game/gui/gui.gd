@@ -17,7 +17,7 @@ func _on_timer_timeout():
 func update_time_label():
 	var minutes : int = seconds_remaining / 60
 	var seconds : int = seconds_remaining % 60
-	$container/time_label.text = str(minutes) + ":" + str("%02d" % seconds)
+	$CenterContainer2/time_label.text = str(minutes) + ":" + str("%02d" % seconds)
 
 
 func update_time(delta_time):
@@ -34,11 +34,11 @@ func update_score(delta_score):
 
 
 func update_score_label():
-	$container/score_label.text = "%08d" % score
+	$CenterContainer/HBoxContainer/VBoxContainer/score_label.text = "%08d" % score
 
 
 func update_hp_label(hp):
-	$container/hp_label.text = "HP: " + str(hp)
+	$CenterContainer/HBoxContainer/VBoxContainer/hp_label.text = "HP: " + str(hp)
 
 
 func _on_player_hp_updated(hp):
