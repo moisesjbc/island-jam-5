@@ -5,8 +5,8 @@
 [ext_resource path="res://game/player/anim/left/Player_03.png" type="Texture" id=3]
 [ext_resource path="res://game/player/anim/top/Player_01.png" type="Texture" id=4]
 [ext_resource path="res://game/player/anim/bottom/Player_05.png" type="Texture" id=5]
-[ext_resource path="res://game/player/anim/botom_left/Player_04.png" type="Texture" id=6]
-[ext_resource path="res://game/player/anim/top_left/Player_02.png" type="Texture" id=7]
+[ext_resource path="res://game/player/anim/top_left/Player_02.png" type="Texture" id=6]
+[ext_resource path="res://game/player/anim/botom_left/Player_04.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,12 +27,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "bottom_left",
+"name": "top_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "top_left",
+"name": "bottom_left",
 "speed": 5.0
 } ]
 

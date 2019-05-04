@@ -9,6 +9,10 @@ signal dead
 signal hp_updated
 
 
+func _ready():
+	emit_signal('hp_updated', hp)
+
+
 func move(delta):
 	"""
 	Move player according to user input
