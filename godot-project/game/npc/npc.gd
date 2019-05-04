@@ -46,7 +46,10 @@ func kill():
 
 func _process(delta):
 	if alive:
-		move_and_collide(decide_direction(delta))
+		var collision = move_and_collide(decide_direction(delta))
+		if collision and collision.get_collider().name == 'player':
+			collision.get_collider().hit()
+			queue_free()
 		look_at_player()
 	else:
 		if dragging:

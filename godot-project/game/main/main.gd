@@ -40,3 +40,7 @@ func enemy_killed():
 	Update score based after killing an enemy
 	"""
 	$gui_canvas/gui.update_score(score_per_enemy_killed)
+
+
+func _on_player_dead():
+	emit_signal('game_over')

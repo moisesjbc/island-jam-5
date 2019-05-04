@@ -13,7 +13,7 @@ anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -960.0
 margin_right = 960.0
-margin_bottom = 226.0
+margin_bottom = 464.0
 custom_constants/separation = 15
 
 [node name="time_label" type="Label" parent="container"]
@@ -28,6 +28,12 @@ autostart = true
 margin_top = 29.0
 margin_right = 1920.0
 margin_bottom = 43.0
+align = 1
+
+[node name="hp_label" type="Label" parent="container"]
+margin_top = 58.0
+margin_right = 1920.0
+margin_bottom = 72.0
 align = 1
 
 [connection signal="timeout" from="container/timer" to="." method="_on_timer_timeout"]

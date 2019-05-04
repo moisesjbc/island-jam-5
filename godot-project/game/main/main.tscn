@@ -42,3 +42,5 @@ position = Vector2( 1062.54, 721.008 )
 
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="timeout" from="gui_canvas/gui" to="." method="_on_gui_timeout"]
+[connection signal="dead" from="player" to="." method="_on_player_dead"]
+[connection signal="hp_updated" from="player" to="gui_canvas/gui" method="_on_player_hp_updated"]

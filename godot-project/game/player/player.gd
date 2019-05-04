@@ -3,6 +3,10 @@ extends KinematicBody2D
 export (int) var speed = 300
 export (float) var shoot_cooldown = 1.0
 export (PackedScene) var bullet_template = null
+export (int) var max_hp = 5
+onready var hp : int = max_hp
+signal dead
+signal hp_updated
 
 
 func move(delta):
@@ -41,6 +45,16 @@ func shoot():
 		bullet.rotation = rotation
 		get_tree().get_root().add_child(bullet)
 		$shoot_cooldown.start(shoot_cooldown)
+
+
+func hit():
+	"""
+	Damage the player and check if it died
+	"""
+	hp -= 1
+	emit_signal('hp_updated', hp)
+	if hp == 0:
+		emit_signal('dead')
 
 
 func _process(delta):

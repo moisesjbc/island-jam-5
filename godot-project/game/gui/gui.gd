@@ -4,6 +4,7 @@ export (int) var seconds_remaining = 30
 var score : int = 0
 signal timeout
 
+
 func _ready():
 	update_time(0)
 	update_score(0)
@@ -30,6 +31,15 @@ func update_time(delta_time):
 func update_score(delta_score):
 	score += delta_score
 	update_score_label()
-	
+
+
 func update_score_label():
 	$container/score_label.text = "%08d" % score
+
+
+func update_hp_label(hp):
+	$container/hp_label.text = "HP: " + str(hp)
+
+
+func _on_player_hp_updated(hp):
+	update_hp_label(hp)
