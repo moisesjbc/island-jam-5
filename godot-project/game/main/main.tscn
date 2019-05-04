@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://game/main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/game_over_menu/game_over_menu.tscn" type="PackedScene" id=3]
-[ext_resource path="res://game/player/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://game/npc/npc_orc/npc_orc.tscn" type="PackedScene" id=5]
-[ext_resource path="res://game/npc/npm_rabbit/npc_rabbit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/gui/gui.tscn" type="PackedScene" id=4]
+[ext_resource path="res://game/player/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://game/npc/npc_orc/npc_orc.tscn" type="PackedScene" id=6]
+[ext_resource path="res://game/npc/npm_rabbit/npc_rabbit.tscn" type="PackedScene" id=7]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -23,13 +24,17 @@ visible = false
 [node name="game_over_menu" parent="gui_canvas" instance=ExtResource( 3 )]
 visible = false
 
-[node name="player" parent="." instance=ExtResource( 4 )]
+[node name="gui" parent="gui_canvas" instance=ExtResource( 4 )]
+seconds_remaining = 10
+
+[node name="player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 396.664, 254.126 )
 
-[node name="npc_orc" parent="." instance=ExtResource( 5 )]
+[node name="npc_orc" parent="." instance=ExtResource( 6 )]
 position = Vector2( 269.429, 721.008 )
 
-[node name="npc_rabbit" parent="." instance=ExtResource( 6 )]
+[node name="npc_rabbit" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1062.54, 721.008 )
 
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
+[connection signal="timeout" from="gui_canvas/gui" to="." method="_on_gui_timeout"]
