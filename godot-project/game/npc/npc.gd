@@ -34,11 +34,13 @@ func look_at_player():
 
 
 func kill():
-	alive = false
-	$collider.disabled = true
-	
-	# Set a cooldown. When trigerred make the body disappear.
-	$disappear_cooldown_timer.start(disappear_cooldown)
+	print("kill!")
+	if alive:
+		alive = false
+		$collider.disabled = true
+		
+		# Set a cooldown. When trigerred make the body disappear.
+		$disappear_cooldown_timer.start(disappear_cooldown)
 
 
 func _process(delta):

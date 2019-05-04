@@ -9,6 +9,7 @@ var npc_templates: Array = [
 	preload('res://game/npc/npc_pig/npc_pig.tscn')
 ]
 
+
 func _ready():
 	randomize()
 	$cooldown.start(cooldown_time)
