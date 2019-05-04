@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/bullet/bullet.gd" type="Script" id=1]
+[ext_resource path="res://game/bullet/godot.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 33.788, 36.3237 )
+
+[node name="bullet" type="KinematicBody2D"]
+position = Vector2( 3.79468, 0 )
+script = ExtResource( 1 )
+speed = 500
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.133294, 0.133294 )
+frames = SubResource( 1 )
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
