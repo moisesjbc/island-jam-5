@@ -1,16 +1,22 @@
 extends KinematicBody2D
 
-
+export (PackedScene) var dish_template = null
 export (int) var speed = 250
 var player = null
 var alive = true
 var dragging : bool = false
 
 
+
 func _ready():
 	player = get_node("../player")
+	
 	add_to_group("NPCs")
 	set_process_input(true)
+	
+	
+func get_effect():
+	return ''
 
 
 func decide_direction(delta):
@@ -50,3 +56,21 @@ func _on_area_input_event(viewport, event, shape_idx):
 			event.pressed and \
 			event.button_index == BUTTON_LEFT:
 				dragging = not dragging
+
+
+func _on_area_area_entered(area):
+	"""
+	If NPC collides with other and both are dead, transform them into a dish
+	"""
+	if dragging and area.get_parent().is_in_group("NPCs"):
+		var other_npc = area.get_parent()
+		if not alive and not other_npc.alive:
+			if get_effect() != other_npc.get_effect():
+				# Deactivate the processing in the other NPC so this code isn't run again on it.
+				other_npc.set_process(false)
+				var dish = dish_template.instance()
+				dish.set_combined_effect(get_effect(), other_npc.get_effect())
+				dish.global_position = area.global_position
+				get_tree().get_root().add_child(dish)
+				queue_free()
+				other_npc.queue_free()

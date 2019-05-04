@@ -30,7 +30,6 @@ position = Vector2( 396.664, 254.126 )
 position = Vector2( 269.429, 721.008 )
 
 [node name="npc_rabbit" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 position = Vector2( 1062.54, 721.008 )
 
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]

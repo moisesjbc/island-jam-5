@@ -4,5 +4,6 @@
 [ext_resource path="res://game/npc/npm_rabbit/npc_rabbit.gd" type="Script" id=2]
 
 [node name="npc_rabbit" instance=ExtResource( 1 )]
+editor/display_folded = true
 script = ExtResource( 2 )
 
