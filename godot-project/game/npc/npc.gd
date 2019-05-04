@@ -73,7 +73,14 @@ func _on_area_area_entered(area):
 	"""
 	if dragging and area.get_parent().is_in_group("NPCs"):
 		var other_npc = area.get_parent()
+		
+		
 		if not alive and not other_npc.alive:
+			# In both NPCs are dead, destroy them in any case
+			queue_free()
+			other_npc.queue_free()
+			
+			# If they are different, create a dish combining the effects.
 			if get_effect() != other_npc.get_effect():
 				# Deactivate the processing in the other NPC so this code isn't run again on it.
 				other_npc.set_process(false)
@@ -81,8 +88,7 @@ func _on_area_area_entered(area):
 				dish.set_combined_effect(get_effect(), other_npc.get_effect())
 				dish.global_position = area.global_position
 				get_parent().add_child(dish)
-				queue_free()
-				other_npc.queue_free()
+				
 
 
 func _on_disappear_cooldown_timer_timeout():
