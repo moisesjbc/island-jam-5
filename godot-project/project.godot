@@ -27,6 +27,11 @@ music_system="*res://globals/music_system/music_system.tscn"
 
 settings/fps/force_fps=60
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [input]
 
 ui_pause={
