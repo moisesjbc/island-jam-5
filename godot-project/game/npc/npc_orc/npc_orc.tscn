@@ -12,8 +12,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="npc_orc" index="0" instance=ExtResource( 1 )]
-editor/display_folded = false
+[node name="npc_orc" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="sprite" parent="." index="0"]
