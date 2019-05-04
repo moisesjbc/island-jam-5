@@ -32,8 +32,34 @@ func look_at_mouse():
 	"""
 	Rotate player so it looks towards mouse position
 	"""
-	look_at(get_global_mouse_position())
+	var degrees = (int(abs($bullet_respawn_origin.rotation_degrees)) + 270) % 360
+	$bullet_respawn_origin.look_at(get_global_mouse_position())
+	var rotation_degrees_min = int($bullet_respawn_origin.rotation_degrees) % 180
 	
+	var half_degrees = degrees % 180
+	
+	var anim_name = ''
+	if degrees < 45:
+		anim_name = 'top'
+	elif degrees < 90:
+		anim_name = 'top_left'
+	elif degrees < 135:
+		anim_name = 'left'
+	elif degrees < 170:
+		anim_name = 'bottom_left'
+	elif degrees < 220:
+		anim_name = 'bottom'
+	elif degrees < 245:
+		anim_name = 'bottom_left'
+	elif degrees < 300:
+		anim_name = 'left'
+	else:
+		anim_name = 'top_left'
+	
+	$sprite.flip_h = degrees > 180
+
+	if anim_name != $sprite.animation:
+		$sprite.play(anim_name)
 
 func shoot():
 	"""
@@ -41,8 +67,8 @@ func shoot():
 	"""
 	if Input.is_action_pressed("ui_shoot") and $shoot_cooldown.is_stopped():
 		var bullet = bullet_template.instance()
-		bullet.global_position = $bullet_respawn.global_position
-		bullet.rotation = rotation
+		bullet.global_position = $bullet_respawn_origin/bullet_respawn.global_position
+		bullet.global_rotation = $bullet_respawn_origin.global_rotation
 		get_tree().get_root().add_child(bullet)
 		$shoot_cooldown.start(shoot_cooldown)
 

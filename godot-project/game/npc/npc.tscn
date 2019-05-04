@@ -16,7 +16,7 @@ animations = [ {
 extents = Vector2( 73.485, 72.9773 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 73.3078, 76.6124 )
+extents = Vector2( 20.8507, 38.6066 )
 
 [node name="npc" type="KinematicBody2D"]
 collision_layer = 2

@@ -1,19 +1,43 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://game/player/player.gd" type="Script" id=1]
 [ext_resource path="res://game/bullet/bullet.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/player/godot.png" type="Texture" id=3]
+[ext_resource path="res://game/player/anim/left/Player_03.png" type="Texture" id=3]
+[ext_resource path="res://game/player/anim/top/Player_01.png" type="Texture" id=4]
+[ext_resource path="res://game/player/anim/bottom/Player_05.png" type="Texture" id=5]
+[ext_resource path="res://game/player/anim/top_left/Player_02.png" type="Texture" id=6]
+[ext_resource path="res://game/player/anim/botom_left/Player_04.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "top",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "bottom",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "top_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "bottom_left",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 54.4145, 50.4999 )
+extents = Vector2( 30.0274, 42.9605 )
 
 [node name="player" type="KinematicBody2D"]
 collision_mask = 7
@@ -22,16 +46,19 @@ bullet_template = ExtResource( 2 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.323532, -0.647064 )
-rotation = 1.5708
-scale = Vector2( 0.195175, 0.195175 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
+animation = "top"
 
 [node name="collider" type="CollisionShape2D" parent="."]
+position = Vector2( 2.15091, 0 )
 shape = SubResource( 2 )
-
-[node name="bullet_respawn" type="Position2D" parent="."]
-position = Vector2( 123.382, 0 )
 
 [node name="shoot_cooldown" type="Timer" parent="."]
 one_shot = true
+
+[node name="bullet_respawn_origin" type="Position2D" parent="."]
+
+[node name="bullet_respawn" type="Position2D" parent="bullet_respawn_origin"]
+position = Vector2( 90.4758, -0.151337 )
 

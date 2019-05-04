@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bosque01.wav-5ea20e27c1ce872ba49cb7a1d057caae.sample"
+
+[deps]
+
+source_file="res://globals/music_system/Bosque01.wav"
+dest_files=[ "res://.import/Bosque01.wav-5ea20e27c1ce872ba49cb7a1d057caae.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

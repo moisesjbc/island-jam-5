@@ -31,7 +31,16 @@ func look_at_player():
 	Look at the player's position
 	"""
 	look_at(player.global_position)
-
+	
+	
+func decide_animation():
+	if alive:
+		#if rotation_degrees % 180:
+		#	if rotation_degrees > 140:
+		#		return 'bottom'
+		pass
+			
+		var animation_index = rotation_degrees
 
 func kill():
 	if alive:
