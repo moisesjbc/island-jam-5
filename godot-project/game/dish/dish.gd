@@ -1,7 +1,5 @@
 extends Area2D
 
-signal effect_plus_time
-signal effect_minus_time
 
 var effect : String = 'plus_time'
 
@@ -15,7 +13,6 @@ func set_combined_effect(effect_1, effect_2):
 
 
 func _on_dish_body_entered(body):
+	queue_free()
 	if body.name == 'player':
-		print('player ate me!')
-		print(effect)
-		emit_signal(effect)
+		get_parent().process_effect(effect, 5)

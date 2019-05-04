@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://game/gui/gui.tscn" type="PackedScene" id=4]
 [ext_resource path="res://game/player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/npc/npc_orc/npc_orc.tscn" type="PackedScene" id=6]
-[ext_resource path="res://game/npc/npm_rabbit/npc_rabbit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/npc/npc_rabbit/npc_rabbit.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/npc_respawn/npc_respawn.tscn" type="PackedScene" id=8]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -25,7 +26,7 @@ visible = false
 visible = false
 
 [node name="gui" parent="gui_canvas" instance=ExtResource( 4 )]
-seconds_remaining = 10
+seconds_remaining = 20
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 396.664, 254.126 )
@@ -35,6 +36,8 @@ position = Vector2( 269.429, 721.008 )
 
 [node name="npc_rabbit" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1062.54, 721.008 )
+
+[node name="npc_respawn" parent="." instance=ExtResource( 8 )]
 
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="timeout" from="gui_canvas/gui" to="." method="_on_gui_timeout"]

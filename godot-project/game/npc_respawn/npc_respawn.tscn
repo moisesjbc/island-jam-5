@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/npc_respawn/npc_respawn.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -14.2873, 1157.97, 0, 0, 0, 0, 1994.44, 1144.72, 0, 0, 0, 0, 1997.09, -74.2958, 0, 0, 0, 0, -40.7876, -87.546, 0, 0, 0, 0, -40, 1150 )
+}
+
+[node name="npc_respawn" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="path" type="Path2D" parent="."]
+curve = SubResource( 1 )
+
+[node name="path_follow" type="PathFollow2D" parent="path"]
+position = Vector2( -14.2873, 1157.97 )
+rotation = -0.00658072
+
+[node name="cooldown" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="cooldown" to="." method="_on_cooldown_timeout"]

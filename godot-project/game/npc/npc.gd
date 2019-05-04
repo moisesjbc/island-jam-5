@@ -71,6 +71,6 @@ func _on_area_area_entered(area):
 				var dish = dish_template.instance()
 				dish.set_combined_effect(get_effect(), other_npc.get_effect())
 				dish.global_position = area.global_position
-				get_tree().get_root().add_child(dish)
+				get_parent().add_child(dish)
 				queue_free()
 				other_npc.queue_free()
