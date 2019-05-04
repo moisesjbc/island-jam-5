@@ -16,6 +16,8 @@ extents = Vector2( 33.788, 36.3237 )
 
 [node name="bullet" type="KinematicBody2D"]
 position = Vector2( 3.79468, 0 )
+collision_layer = 8
+collision_mask = 6
 script = ExtResource( 1 )
 speed = 500
 

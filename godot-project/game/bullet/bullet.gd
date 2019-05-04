@@ -9,6 +9,6 @@ func _process(delta):
 	# Destroy NPCs if hit
 	if collision:
 		var body = collision.get_collider()
+		queue_free()
 		if body.is_in_group("NPCs") and body.alive:
-			queue_free()
 			body.kill()

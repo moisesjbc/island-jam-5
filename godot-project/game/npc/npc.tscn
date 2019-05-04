@@ -19,6 +19,8 @@ extents = Vector2( 73.485, 72.9773 )
 extents = Vector2( 73.3078, 76.6124 )
 
 [node name="npc" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource( 1 )
 dish_template = ExtResource( 2 )
 

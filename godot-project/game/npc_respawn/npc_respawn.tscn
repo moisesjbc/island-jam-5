@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -14.2873, 1157.97, 0, 0, 0, 0, 1994.44, 1144.72, 0, 0, 0, 0, 1997.09, -74.2958, 0, 0, 0, 0, -40.7876, -87.546, 0, 0, 0, 0, -40, 1150 )
+"points": PoolVector2Array( 0, 0, 0, 0, 104.265, 994.126, 0, 0, 0, 0, 1847.07, 990.178, 0, 0, 0, 0, 1846.96, 70.8489, 0, 0, 0, 0, 77.0244, 70.8489, 0, 0, 0, 0, 68.5361, 1005.97 )
 }
 
 [node name="npc_respawn" type="Node2D"]
@@ -16,8 +16,8 @@ cooldown_time = 3.0
 curve = SubResource( 1 )
 
 [node name="path_follow" type="PathFollow2D" parent="path"]
-position = Vector2( -14.2873, 1157.97 )
-rotation = -0.00658072
+position = Vector2( 104.265, 994.126 )
+rotation = -0.00225866
 
 [node name="cooldown" type="Timer" parent="."]
 
