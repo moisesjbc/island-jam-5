@@ -3,6 +3,6 @@
 [ext_resource path="res://game/npc/npc.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/npc/npm_rabbit/npc_rabbit.gd" type="Script" id=2]
 
-[node name="npc_rabbit" index="0" instance=ExtResource( 1 )]
+[node name="npc_rabbit" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
