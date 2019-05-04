@@ -44,3 +44,5 @@ func enemy_killed():
 
 func _on_player_dead():
 	emit_signal('game_over')
+
+

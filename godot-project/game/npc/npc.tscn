@@ -25,7 +25,6 @@ script = ExtResource( 1 )
 dish_template = ExtResource( 2 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
-rotation = 1.5708
 scale = Vector2( 0.275706, 0.275706 )
 frames = SubResource( 1 )
 

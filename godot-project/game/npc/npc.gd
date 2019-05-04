@@ -31,16 +31,7 @@ func look_at_player():
 	Look at the player's position
 	"""
 	look_at(player.global_position)
-	
-	
-func decide_animation():
-	if alive:
-		#if rotation_degrees % 180:
-		#	if rotation_degrees > 140:
-		#		return 'bottom'
-		pass
-			
-		var animation_index = rotation_degrees
+
 
 func kill():
 	if alive:
@@ -59,7 +50,7 @@ func _process(delta):
 		if collision and collision.get_collider().name == 'player':
 			collision.get_collider().hit()
 			queue_free()
-		look_at_player()
+		decide_animation()
 	else:
 		if dragging:
 			global_position = get_global_mouse_position()
@@ -102,3 +93,32 @@ func _on_area_area_entered(area):
 
 func _on_disappear_cooldown_timer_timeout():
 	queue_free()
+
+
+func decide_animation():
+	var degrees = get_angle_to(get_global_mouse_position()) 
+	print(degrees)
+	#var degrees = global_rotation_degrees - 90
+	
+	var anim_name = ''
+	if degrees < 45:
+		anim_name = 'top'
+	elif degrees < 90:
+		anim_name = 'top_left'
+	elif degrees < 135:
+		anim_name = 'left'
+	elif degrees < 170:
+		anim_name = 'bottom_left'
+	elif degrees < 220:
+		anim_name = 'bottom'
+	elif degrees < 245:
+		anim_name = 'bottom_left'
+	elif degrees < 300:
+		anim_name = 'left'
+	else:
+		anim_name = 'top_left'
+	
+	$sprite.flip_h = degrees > 180
+
+	if anim_name != $sprite.animation:
+		$sprite.play(anim_name)
