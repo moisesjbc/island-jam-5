@@ -5,7 +5,7 @@ export (int) var speed = 250
 var player = null
 var alive = true
 var dragging : bool = false
-
+export (float) var disappear_cooldown = 10.0
 
 
 func _ready():
@@ -36,6 +36,9 @@ func look_at_player():
 func kill():
 	alive = false
 	$collider.disabled = true
+	
+	# Set a cooldown. When trigerred make the body disappear.
+	$disappear_cooldown_timer.start(disappear_cooldown)
 
 
 func _process(delta):
@@ -74,3 +77,7 @@ func _on_area_area_entered(area):
 				get_parent().add_child(dish)
 				queue_free()
 				other_npc.queue_free()
+
+
+func _on_disappear_cooldown_timer_timeout():
+	queue_free()

@@ -38,7 +38,10 @@ editor/display_folded = true
 position = Vector2( -1.54002, 1.02668 )
 shape = SubResource( 3 )
 
+[node name="disappear_cooldown_timer" type="Timer" parent="."]
+
 [connection signal="input_event" from="." to="." method="_on_npc_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_npc_mouse_entered"]
 [connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]
 [connection signal="input_event" from="area" to="." method="_on_area_input_event"]
+[connection signal="timeout" from="disappear_cooldown_timer" to="." method="_on_disappear_cooldown_timer_timeout"]
