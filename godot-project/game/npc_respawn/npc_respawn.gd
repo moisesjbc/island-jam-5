@@ -1,13 +1,17 @@
 extends Node2D
 
+export (float) var cooldown_time = 1.0
+
 var npc_templates: Array = [
 	preload('res://game/npc/npc_orc/npc_orc.tscn'),
-	preload('res://game/npc/npc_rabbit/npc_rabbit.tscn')
+	preload('res://game/npc/npc_rabbit/npc_rabbit.tscn'),
+	preload('res://game/npc/npc_fairy/npc_fairy.tscn'),
+	preload('res://game/npc/npc_pig/npc_pig.tscn')
 ]
-
 
 func _ready():
 	randomize()
+	$cooldown.start(cooldown_time)
 
 
 func respawn_npc():

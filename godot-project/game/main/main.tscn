@@ -26,7 +26,8 @@ visible = false
 visible = false
 
 [node name="gui" parent="gui_canvas" instance=ExtResource( 4 )]
-seconds_remaining = 20
+rect_scale = Vector2( 1.00128, 1 )
+seconds_remaining = 600
 
 [node name="player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 396.664, 254.126 )

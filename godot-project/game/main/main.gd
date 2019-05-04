@@ -17,6 +17,18 @@ func _on_gui_timeout():
 
 
 func process_effect(effect, effect_value):
+	"""
+	Apply the given effect to the game
+	"""
 	print("Processing effect")
 	if effect == 'effect_minus_time':
 		$gui_canvas/gui.update_time(-effect_value)
+	elif effect == 'effect_plus_time':
+		$gui_canvas/gui.update_time(+effect_value)
+	#elif effect == 'effect_minus_enemy':
+	#	$gui_canvas/gui.update_time(-effect_value)
+	elif effect == 'effect_plus_enemy':
+		var i = 0
+		while i < effect_value:
+			$npc_respawn.respawn_npc()
+			i += 1
