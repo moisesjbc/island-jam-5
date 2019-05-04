@@ -20,5 +20,14 @@ func move(delta):
 		
 	move_and_collide(direction * speed * delta)
 
+
+func look_at_mouse():
+	"""
+	Rotate player so it looks towards mouse position
+	"""
+	look_at(get_global_mouse_position())
+
+
 func _process(delta):
 	move(delta)
+	look_at_mouse()
