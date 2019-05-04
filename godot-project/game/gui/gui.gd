@@ -1,10 +1,12 @@
 extends Control
 
 export (int) var seconds_remaining = 30
+var score : int = 0
 signal timeout
 
 func _ready():
 	update_time(0)
+	update_score(0)
 
 
 func _on_timer_timeout():
@@ -23,3 +25,11 @@ func update_time(delta_time):
 		seconds_remaining = 0
 		emit_signal('timeout')
 	update_time_label()
+
+
+func update_score(delta_score):
+	score += delta_score
+	update_score_label()
+	
+func update_score_label():
+	$container/score_label.text = "%08d" % score

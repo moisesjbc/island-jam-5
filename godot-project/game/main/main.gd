@@ -1,6 +1,7 @@
 extends Node2D
 
 signal game_over
+export (int) var score_per_enemy_killed = 20
 
 
 func _process(delta):
@@ -32,3 +33,10 @@ func process_effect(effect, effect_value):
 		while i < effect_value:
 			$npc_respawn.respawn_npc()
 			i += 1
+
+
+func enemy_killed():
+	"""
+	Update score based after killing an enemy
+	"""
+	$gui_canvas/gui.update_score(score_per_enemy_killed)

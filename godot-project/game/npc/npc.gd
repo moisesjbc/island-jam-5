@@ -34,8 +34,9 @@ func look_at_player():
 
 
 func kill():
-	print("kill!")
 	if alive:
+		get_parent().enemy_killed()
+		
 		alive = false
 		$collider.disabled = true
 		
