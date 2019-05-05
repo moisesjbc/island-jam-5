@@ -15,8 +15,9 @@ func _ready():
 	var i = 0
 	while i < max_hp:
 		var heart = heart_template.instance()
+		#heart.scale(Vector2(0.3, 0.3))
 		hearts.append(heart)
-		$CenterContainer/HBoxContainer/VBoxContainer/hp_hearts.add_child(heart)
+		$hp_hearts.add_child(heart)
 		i += 1
 
 
@@ -27,7 +28,7 @@ func _on_timer_timeout():
 func update_time_label():
 	var minutes : int = seconds_remaining / 60
 	var seconds : int = seconds_remaining % 60
-	$CenterContainer2/time_label.text = str(minutes) + ":" + str("%02d" % seconds)
+	$time_label.text = str(minutes) + ":" + str("%02d" % seconds)
 
 
 func update_time(delta_time):
@@ -44,7 +45,7 @@ func update_score(delta_score):
 
 
 func update_score_label():
-	$CenterContainer/HBoxContainer/VBoxContainer/score_label.text = "%08d" % score
+	$score_label.text = "%08d" % score
 
 
 func update_hp_label(hp):
