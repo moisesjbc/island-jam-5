@@ -20,7 +20,7 @@ func respawn_npc():
 	Respawn a random NPC at a random position
 	"""
 	# Select a random NPC
-	var npc_index = 3 # randi() % npc_templates.size()
+	var npc_index = 1 # randi() % npc_templates.size()
 	
 	# Select a random respawn position
 	$path/path_follow.set_offset(randi())

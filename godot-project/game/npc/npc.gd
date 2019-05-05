@@ -14,6 +14,8 @@ func _ready():
 	add_to_group("NPCs")
 	set_process_input(true)
 	
+	$sprite.stop()
+	
 	
 func get_effect():
 	return ''
@@ -122,5 +124,5 @@ func decide_animation():
 	
 	$sprite.flip_h = degrees > 180
 
-	if anim_name != $sprite.animation:
+	if not $sprite.is_playing() or anim_name != $sprite.animation:
 		$sprite.play(anim_name)

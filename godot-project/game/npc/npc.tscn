@@ -1,22 +1,52 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/npc/npc.gd" type="Script" id=1]
 [ext_resource path="res://game/dish/dish.tscn" type="PackedScene" id=2]
-[ext_resource path="res://game/player/godot.png" type="Texture" id=3]
+[ext_resource path="res://game/npc/npc_rabbit/anim/left/NPC_Buny_03.png" type="Texture" id=3]
+[ext_resource path="res://game/npc/npc_rabbit/anim/top/NPC_Buny_01.png" type="Texture" id=4]
+[ext_resource path="res://game/npc/npc_rabbit/anim/bottom/NPC_Buny_05.png" type="Texture" id=5]
+[ext_resource path="res://game/npc/npc_rabbit/anim/top_left/NPC_Buny_02.png" type="Texture" id=6]
+[ext_resource path="res://game/npc/npc_rabbit/anim/bottom_left/NPC_Buny_04.png" type="Texture" id=7]
+[ext_resource path="res://game/npc/npc_rabbit/anim/dead/IMG-0095.PNG" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "top",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "bottom",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "top_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "bottom_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 19.8465, 39.2818 )
+extents = Vector2( 14.3012, 32.5974 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20.8507, 38.6066 )
+extents = Vector2( 14.2469, 26.1883 )
 
 [node name="npc" type="KinematicBody2D"]
 collision_layer = 2

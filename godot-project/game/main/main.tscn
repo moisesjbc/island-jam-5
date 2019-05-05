@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://game/main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://game/player/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://game/npc_respawn/npc_respawn.tscn" type="PackedScene" id=6]
 [ext_resource path="res://game/wall/wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://game/npc/npc_rabbit/npc_rabbit.tscn" type="PackedScene" id=8]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -48,6 +49,9 @@ rotation = 1.5708
 [node name="bottom_wall" parent="walls" instance=ExtResource( 7 )]
 position = Vector2( 983.85, 1110.35 )
 rotation = 1.5708
+
+[node name="npc_rabbit" parent="." instance=ExtResource( 8 )]
+position = Vector2( 451.902, 831.549 )
 
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]
 [connection signal="timeout" from="gui_canvas/gui" to="." method="_on_gui_timeout"]
