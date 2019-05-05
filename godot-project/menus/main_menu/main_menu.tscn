@@ -6,7 +6,7 @@
 [ext_resource path="res://fonts/font.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
-size = 20
+size = 40
 font_data = ExtResource( 4 )
 
 [node name="main_menu" type="CanvasLayer"]
@@ -28,9 +28,9 @@ rect_scale = Vector2( 0.7, 0.7 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 margin_left = 585.0
-margin_top = 17.0
+margin_top = 5.0
 margin_right = 1295.0
-margin_bottom = 695.0
+margin_bottom = 706.0
 custom_constants/separation = 20
 
 [node name="start_game_button" parent="CenterContainer/VBoxContainer" instance=ExtResource( 3 )]
@@ -80,7 +80,7 @@ label = "Salir"
 [node name="island_jam_label" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 655.0
 margin_right = 710.0
-margin_bottom = 678.0
+margin_bottom = 701.0
 custom_fonts/font = SubResource( 1 )
 text = "Made for Island Jam V Gran Canaria"
 align = 1
