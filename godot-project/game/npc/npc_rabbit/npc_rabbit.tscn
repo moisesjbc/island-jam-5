@@ -11,7 +11,6 @@ animation = "top"
 playing = true
 
 [node name="collider" parent="." index="1"]
-visible = true
 position = Vector2( 1.16227, 2.71197 )
 
 [node name="CollisionShape2D" parent="area" index="0"]
