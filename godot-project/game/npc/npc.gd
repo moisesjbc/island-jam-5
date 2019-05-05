@@ -1,7 +1,9 @@
 extends KinematicBody2D
 
 export (PackedScene) var dish_template = null
-export (int) var speed = 250
+export (int) var max_speed = 400
+export (int) var min_speed = 300
+var speed
 var player = null
 var alive = true
 var dragging : bool = false
@@ -9,6 +11,7 @@ export (float) var disappear_cooldown = 10.0
 
 
 func _ready():
+	speed = randi() % (max_speed - min_speed) + min_speed
 	player = get_node("../player")
 	
 	add_to_group("NPCs")
