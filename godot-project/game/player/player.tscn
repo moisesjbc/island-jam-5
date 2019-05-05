@@ -49,6 +49,7 @@ extents = Vector2( 30.0274, 42.9605 )
 editor/display_folded = true
 collision_mask = 7
 script = ExtResource( 1 )
+shoot_cooldown = 0.5
 bullet_template = ExtResource( 2 )
 
 [node name="sprite" type="AnimatedSprite" parent="."]
