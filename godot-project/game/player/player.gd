@@ -47,13 +47,14 @@ func look_at_mouse():
 			degrees = 360 + degrees
 	else:
 		degrees = 270 - degrees
+	print(degrees)
 	
 	var anim_name = ''
 	if degrees < 45:
 		anim_name = 'top'
-	elif degrees < 90:
+	elif degrees < 85:
 		anim_name = 'top_left'
-	elif degrees < 135:
+	elif degrees < 115:
 		anim_name = 'left'
 	elif degrees < 170:
 		anim_name = 'bottom_left'
