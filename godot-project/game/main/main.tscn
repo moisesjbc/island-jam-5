@@ -51,6 +51,7 @@ position = Vector2( 983.85, 1110.35 )
 rotation = 1.5708
 
 [node name="npc_rabbit" parent="." instance=ExtResource( 8 )]
+editor/display_folded = false
 position = Vector2( 451.902, 831.549 )
 
 [connection signal="game_over" from="." to="." method="_on_main_game_over"]

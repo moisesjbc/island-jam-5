@@ -49,6 +49,7 @@ extents = Vector2( 14.3012, 32.5974 )
 extents = Vector2( 14.2469, 26.1883 )
 
 [node name="npc" type="KinematicBody2D"]
+editor/display_folded = true
 collision_layer = 2
 collision_mask = 3
 script = ExtResource( 1 )
