@@ -1,69 +1,78 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://menus/main_menu/IMG-0109.PNG" type="Texture" id=2]
+[ext_resource path="res://fonts/font.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
 
 [node name="main_menu" type="CanvasLayer"]
-editor/display_folded = true
 script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 605.0
+margin_top = 437.0
+margin_right = -649.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 710.0
-margin_top = 416.0
-margin_right = 1210.0
-margin_bottom = 664.0
+margin_left = 83.0
+margin_top = 187.0
+margin_right = 583.0
+margin_bottom = 455.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
 custom_constants/separation = 20
 
-[node name="HBoxContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 500.0
-margin_bottom = 14.0
-
-[node name="title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 212.0
-margin_right = 287.0
-margin_bottom = 14.0
-text = "GAME TITLE"
-align = 1
-
 [node name="start_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 34.0
 margin_right = 500.0
-margin_bottom = 54.0
+margin_bottom = 29.0
 rect_min_size = Vector2( 500, 0 )
+custom_fonts/font = SubResource( 1 )
 text = "Start game"
 
 [node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 74.0
+margin_top = 49.0
 margin_right = 500.0
-margin_bottom = 94.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 1 )
 text = "How to play"
 
 [node name="credits_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 114.0
+margin_top = 98.0
 margin_right = 500.0
-margin_bottom = 134.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 1 )
 text = "Credits"
 
 [node name="toggle_sound_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 154.0
+margin_top = 147.0
 margin_right = 500.0
-margin_bottom = 174.0
+margin_bottom = 176.0
+custom_fonts/font = SubResource( 1 )
 text = "Sound mode"
 
 [node name="exit_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 194.0
+margin_top = 196.0
 margin_right = 500.0
-margin_bottom = 214.0
+margin_bottom = 225.0
+custom_fonts/font = SubResource( 1 )
 text = "Exit game"
 
-[node name="ludum_dare_label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 234.0
+[node name="island_jam_label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_top = 245.0
 margin_right = 500.0
-margin_bottom = 248.0
-text = "Made for ..."
+margin_bottom = 268.0
+custom_fonts/font = SubResource( 1 )
+text = "Made for Island Jam V Gran Canaria"
 align = 1
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_button" to="." method="_on_start_game_button_pressed"]

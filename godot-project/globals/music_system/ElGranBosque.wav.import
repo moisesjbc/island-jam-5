@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ElGranBosque.wav-f45265b00c5687c7e0206a4cd488c850.sample"
+
+[deps]
+
+source_file="res://globals/music_system/ElGranBosque.wav"
+dest_files=[ "res://.import/ElGranBosque.wav-f45265b00c5687c7e0206a4cd488c850.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
