@@ -19,3 +19,7 @@ func _on_dish_body_entered(body):
 	if body.name == 'player':
 		get_parent().process_effect(effect, 5)
 		body.get_node('eat_sound').play()
+
+
+func _on_disappear_cooldown_timeout():
+	queue_free()
