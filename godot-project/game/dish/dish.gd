@@ -10,6 +10,7 @@ func set_combined_effect(effect_1, effect_2):
 		effect_1 = effect_2
 		effect_2 = aux
 	effect = "effect_" + effect_1 + '_' + effect_2
+	$sprite.play(effect_1 + '_' + effect_2)
 
 
 func _on_dish_body_entered(body):
