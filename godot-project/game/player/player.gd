@@ -88,6 +88,7 @@ func hit():
 	hp -= 1
 	emit_signal('hp_updated', hp)
 	if hp == 0:
+		$sprite.play('dead')
 		emit_signal('dead')
 
 

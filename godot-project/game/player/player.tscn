@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://game/player/player.gd" type="Script" id=1]
 [ext_resource path="res://game/bullet/bullet.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://game/player/anim/bottom/Player_05.png" type="Texture" id=5]
 [ext_resource path="res://game/player/anim/top_left/Player_02.png" type="Texture" id=6]
 [ext_resource path="res://game/player/anim/botom_left/Player_04.png" type="Texture" id=7]
+[ext_resource path="res://game/player/anim/dead/IMG-0101.PNG" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -33,6 +34,11 @@ animations = [ {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "bottom_left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 } ]
 
