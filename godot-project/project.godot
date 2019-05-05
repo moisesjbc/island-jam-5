@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="godot-project"
+config/name="Elf hunting"
 run/main_scene="res://menus/main_menu/main_menu.tscn"
 config/icon="res://icon.png"
 
