@@ -5,7 +5,10 @@ enum SoundMode {
 	FX_ONLY,
 	MUTED
 }
-var sound_mode = SoundMode.FULL
+var sound_mode = SoundMode.MUTED
+
+func _ready():
+	toggle_sound_mode()
 
 
 func toggle_sound_mode():
