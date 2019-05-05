@@ -1,14 +1,15 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/npc/npc.gd" type="Script" id=1]
 [ext_resource path="res://game/dish/dish.tscn" type="PackedScene" id=2]
 [ext_resource path="res://game/npc/npc_rabbit/anim/left/NPC_Buny_03.png" type="Texture" id=3]
 [ext_resource path="res://game/npc/npc_rabbit/anim/top/NPC_Buny_01.png" type="Texture" id=4]
 [ext_resource path="res://game/npc/npc_rabbit/anim/bottom/NPC_Buny_05.png" type="Texture" id=5]
-[ext_resource path="res://game/npc/npc_rabbit/anim/top_left/NPC_Buny_02.png" type="Texture" id=6]
-[ext_resource path="res://game/npc/npc_rabbit/anim/bottom_left/NPC_Buny_04.png" type="Texture" id=7]
+[ext_resource path="res://game/npc/npc_rabbit/anim/bottom_left/NPC_Buny_04.png" type="Texture" id=6]
+[ext_resource path="res://game/npc/npc_rabbit/anim/top_left/NPC_Buny_02.png" type="Texture" id=7]
 [ext_resource path="res://game/npc/npc_rabbit/anim/dead/IMG-0095.PNG" type="Texture" id=8]
 [ext_resource path="res://game/npc/154422__ecfike__ugh-2.wav" type="AudioStream" id=9]
+[ext_resource path="res://game/npc/Enemigos.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,12 +30,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "top_left",
+"name": "bottom_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "bottom_left",
+"name": "top_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -48,6 +49,34 @@ extents = Vector2( 33.1835, 63.4979 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 33.6694, 57.61 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "powerup"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.05176e-05, -115.432 ), Vector2( 0, -140.432 ), Vector2( 0, -155.432 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="npc" type="KinematicBody2D"]
 collision_layer = 2
@@ -73,6 +102,17 @@ shape = SubResource( 3 )
 [node name="death_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
 volume_db = -5.0
+
+[node name="powerup_root" type="Node2D" parent="."]
+
+[node name="powerup_sprite" type="Sprite" parent="powerup_root"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0, -155.432 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 10 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="powerup_root/powerup_sprite"]
+anims/powerup = SubResource( 4 )
 
 [connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]
 [connection signal="input_event" from="area" to="." method="_on_area_input_event"]

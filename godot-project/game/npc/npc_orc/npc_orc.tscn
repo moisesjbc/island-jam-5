@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://game/npc/npc.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/npc/npc_orc/npc_orc.gd" type="Script" id=2]
 [ext_resource path="res://game/npc/npc_orc/anim/left/NPC_Orc_03.png" type="Texture" id=3]
 [ext_resource path="res://game/npc/npc_orc/anim/top/NPC_Orc_01.png" type="Texture" id=4]
 [ext_resource path="res://game/npc/npc_orc/anim/bottom/NPC_Orc_05.png" type="Texture" id=5]
-[ext_resource path="res://game/npc/npc_orc/anim/top_left/NPC_Orc_02.png" type="Texture" id=6]
-[ext_resource path="res://game/npc/npc_orc/anim/bottom_left/NPC_Orc_04.png" type="Texture" id=7]
+[ext_resource path="res://game/npc/npc_orc/anim/bottom_left/NPC_Orc_04.png" type="Texture" id=6]
+[ext_resource path="res://game/npc/npc_orc/anim/top_left/NPC_Orc_02.png" type="Texture" id=7]
 [ext_resource path="res://game/npc/npc_orc/anim/dead/IMG-0098.PNG" type="Texture" id=8]
 [ext_resource path="res://game/npc/npc_orc/404109__deathscyp__damage-1.wav" type="AudioStream" id=9]
+[ext_resource path="res://game/npc/npc_orc/Menos.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -29,12 +30,12 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "top_left",
+"name": "bottom_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "bottom_left",
+"name": "top_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -43,7 +44,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="npc_orc" instance=ExtResource( 1 )]
+[node name="npc_orc" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="sprite" parent="." index="0"]
@@ -55,4 +56,7 @@ position = Vector2( -0.0886648, -2.31302 )
 
 [node name="death_sound" parent="." index="4"]
 stream = ExtResource( 9 )
+
+[node name="powerup_sprite" parent="powerup_root" index="0"]
+texture = ExtResource( 10 )
 

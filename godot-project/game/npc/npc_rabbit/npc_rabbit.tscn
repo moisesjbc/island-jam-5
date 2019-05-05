@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://game/npc/npc.tscn" type="PackedScene" id=1]
 [ext_resource path="res://game/npc/npc_rabbit/npc_rabbit.gd" type="Script" id=2]
+[ext_resource path="res://game/npc/npc_rabbit/Tiempo.png" type="Texture" id=3]
 
-[node name="npc_rabbit" instance=ExtResource( 1 )]
+[node name="npc_rabbit" index="0" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="sprite" parent="." index="0"]
@@ -15,4 +16,7 @@ position = Vector2( 1.16227, 2.71197 )
 
 [node name="CollisionShape2D" parent="area" index="0"]
 position = Vector2( 1.38262, 5.10385 )
+
+[node name="powerup_sprite" parent="powerup_root" index="0"]
+texture = ExtResource( 3 )
 

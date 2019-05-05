@@ -77,6 +77,7 @@ func kill():
 		# Set a cooldown. When trigerred make the body disappear.
 		$disappear_cooldown_timer.start(disappear_cooldown)
 		
+		$powerup_root/powerup_sprite/AnimationPlayer.play("powerup")
 		$sprite.play('dead')
 
 
