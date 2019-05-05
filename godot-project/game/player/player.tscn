@@ -46,6 +46,7 @@ animations = [ {
 extents = Vector2( 30.0274, 42.9605 )
 
 [node name="player" type="KinematicBody2D"]
+editor/display_folded = true
 collision_mask = 7
 script = ExtResource( 1 )
 bullet_template = ExtResource( 2 )
@@ -64,6 +65,7 @@ shape = SubResource( 2 )
 one_shot = true
 
 [node name="bullet_respawn_origin" type="Position2D" parent="."]
+editor/display_folded = true
 
 [node name="bullet_respawn" type="Position2D" parent="bullet_respawn_origin"]
 position = Vector2( 90.4758, -0.151337 )
