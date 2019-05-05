@@ -45,7 +45,6 @@ func look_at_mouse():
 			degrees = 360 + degrees
 	else:
 		degrees = 270 - degrees
-	print(degrees)
 	
 	var anim_name = ''
 	if degrees < 45:
