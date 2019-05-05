@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://game/npc/npc.gd" type="Script" id=1]
 [ext_resource path="res://game/dish/dish.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://game/npc/npc_rabbit/anim/top_left/NPC_Buny_02.png" type="Texture" id=6]
 [ext_resource path="res://game/npc/npc_rabbit/anim/bottom_left/NPC_Buny_04.png" type="Texture" id=7]
 [ext_resource path="res://game/npc/npc_rabbit/anim/dead/IMG-0095.PNG" type="Texture" id=8]
+[ext_resource path="res://game/npc/154422__ecfike__ugh-2.wav" type="AudioStream" id=9]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -69,6 +70,9 @@ position = Vector2( 0.813801, -126.858 )
 shape = SubResource( 3 )
 
 [node name="disappear_cooldown_timer" type="Timer" parent="."]
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
 
 [connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]
 [connection signal="input_event" from="area" to="." method="_on_area_input_event"]

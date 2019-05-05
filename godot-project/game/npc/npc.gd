@@ -65,6 +65,7 @@ func look_at_player():
 
 func kill():
 	if alive:
+		$death_sound.play()
 		get_parent().enemy_killed()
 		
 		alive = false

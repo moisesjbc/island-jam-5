@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://game/player/player.gd" type="Script" id=1]
 [ext_resource path="res://game/bullet/bullet.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://game/player/anim/top_left/Player_02.png" type="Texture" id=6]
 [ext_resource path="res://game/player/anim/botom_left/Player_04.png" type="Texture" id=7]
 [ext_resource path="res://game/player/anim/dead/IMG-0101.PNG" type="Texture" id=8]
+[ext_resource path="res://game/player/Flecha_1.ogg" type="AudioStream" id=9]
+[ext_resource path="res://game/player/430570__cheira__020-grito-de-mujer-glued.wav" type="AudioStream" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -46,7 +48,6 @@ animations = [ {
 extents = Vector2( 30.0274, 42.9605 )
 
 [node name="player" type="KinematicBody2D"]
-editor/display_folded = true
 collision_mask = 7
 script = ExtResource( 1 )
 shoot_cooldown = 0.5
@@ -63,6 +64,7 @@ position = Vector2( 2.15091, 0 )
 shape = SubResource( 2 )
 
 [node name="shoot_cooldown" type="Timer" parent="."]
+wait_time = 0.01
 one_shot = true
 
 [node name="bullet_respawn_origin" type="Position2D" parent="."]
@@ -70,4 +72,13 @@ editor/display_folded = true
 
 [node name="bullet_respawn" type="Position2D" parent="bullet_respawn_origin"]
 position = Vector2( 90.4758, -0.151337 )
+
+[node name="shoot_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = -15.0
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
+volume_db = 1.0
 

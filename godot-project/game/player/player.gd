@@ -74,6 +74,7 @@ func shoot():
 	Shoot if user press the shooting key
 	"""
 	if Input.is_action_pressed("ui_shoot") and $shoot_cooldown.is_stopped():
+		$shoot_sound.play(0.5)
 		var bullet = bullet_template.instance()
 		bullet.global_position = $bullet_respawn_origin/bullet_respawn.global_position
 		bullet.global_rotation = $bullet_respawn_origin.global_rotation
@@ -89,6 +90,7 @@ func hit():
 	emit_signal('hp_updated', hp)
 	if hp == 0:
 		$sprite.play('dead')
+		$death_sound.play()
 		emit_signal('dead')
 
 

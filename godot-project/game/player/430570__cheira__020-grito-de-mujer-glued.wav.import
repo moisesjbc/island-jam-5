@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/430570__cheira__020-grito-de-mujer-glued.wav-9a2037e2ec7ff30433fcdcf0ec5a15aa.sample"
+
+[deps]
+
+source_file="res://game/player/430570__cheira__020-grito-de-mujer-glued.wav"
+dest_files=[ "res://.import/430570__cheira__020-grito-de-mujer-glued.wav-9a2037e2ec7ff30433fcdcf0ec5a15aa.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

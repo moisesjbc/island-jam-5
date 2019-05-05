@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Flecha_1.ogg-63418bee5fa4eaf304cc5d56c25e5361.oggstr"
+
+[deps]
+
+source_file="res://game/bullet/Flecha_1.ogg"
+dest_files=[ "res://.import/Flecha_1.ogg-63418bee5fa4eaf304cc5d56c25e5361.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/404109__deathscyp__damage-1.wav-c30c94ae07f6c5004342f7b41f8089db.sample"
+
+[deps]
+
+source_file="res://game/npc/npc_orc/404109__deathscyp__damage-1.wav"
+dest_files=[ "res://.import/404109__deathscyp__damage-1.wav-c30c94ae07f6c5004342f7b41f8089db.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
