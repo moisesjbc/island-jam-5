@@ -60,7 +60,6 @@ scale = Vector2( 0.45, 0.45 )
 frames = SubResource( 1 )
 
 [node name="collider" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource( 2 )
 
 [node name="area" type="Area2D" parent="."]

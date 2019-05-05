@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menus/button/img/Estatico.png" type="Texture" id=1]
 [ext_resource path="res://menus/button/img/Cliqueado.png" type="Texture" id=2]
 [ext_resource path="res://menus/button/img/Pre-clic.png" type="Texture" id=3]
 [ext_resource path="res://menus/button/button.gd" type="Script" id=4]
 [ext_resource path="res://fonts/font.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://menus/button/428416__sofi-om__71-risa-suave.wav" type="AudioStream" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -31,3 +32,8 @@ text = "FOOBAR"
 align = 1
 valign = 1
 
+[node name="hover_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_button_mouse_entered"]

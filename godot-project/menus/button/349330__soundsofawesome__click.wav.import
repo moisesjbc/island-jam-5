@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/349330__soundsofawesome__click.wav-e418dbd9ab702053d2cddf42ec32f01c.sample"
+
+[deps]
+
+source_file="res://menus/button/349330__soundsofawesome__click.wav"
+dest_files=[ "res://.import/349330__soundsofawesome__click.wav-e418dbd9ab702053d2cddf42ec32f01c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
