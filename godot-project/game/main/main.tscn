@@ -27,7 +27,7 @@ seconds_remaining = 90
 position = Vector2( 977.294, 554.154 )
 
 [node name="npc_respawn" parent="." instance=ExtResource( 6 )]
-cooldown_time = 2.0
+cooldown_time = 1.5
 
 [node name="walls" type="Node2D" parent="."]
 
