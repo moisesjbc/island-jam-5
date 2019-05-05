@@ -72,6 +72,7 @@ shape = SubResource( 3 )
 
 [node name="death_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 9 )
+volume_db = -5.0
 
 [connection signal="area_entered" from="area" to="." method="_on_area_area_entered"]
 [connection signal="input_event" from="area" to="." method="_on_area_input_event"]
