@@ -38,9 +38,15 @@ func look_at_mouse():
 	"""
 	var degrees = (int(abs($bullet_respawn_origin.rotation_degrees)) + 270) % 360
 	$bullet_respawn_origin.look_at(get_global_mouse_position())
-	var rotation_degrees_min = int($bullet_respawn_origin.rotation_degrees) % 180
 	
 	var half_degrees = degrees % 180
+	degrees = rad2deg(get_angle_to(get_global_mouse_position()))
+	if degrees < 0:
+		degrees = abs(degrees) - 90
+		if degrees < 0:
+			degrees = 360 + degrees
+	else:
+		degrees = 270 - degrees
 	
 	var anim_name = ''
 	if degrees < 45:

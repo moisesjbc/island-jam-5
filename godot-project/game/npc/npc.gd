@@ -101,7 +101,7 @@ func _on_disappear_cooldown_timer_timeout():
 
 func decide_animation():
 	var degrees = get_angle_to(get_global_mouse_position()) 
-	print(degrees)
+	#print(degrees)
 	#var degrees = global_rotation_degrees - 90
 	
 	var anim_name = ''

@@ -48,7 +48,7 @@ radius = 19.039
 [sub_resource type="CircleShape2D" id=3]
 radius = 19.1372
 
-[node name="npc_fairy" index="0" instance=ExtResource( 1 )]
+[node name="npc_fairy" instance=ExtResource( 1 )]
 editor/display_folded = false
 script = ExtResource( 2 )
 
