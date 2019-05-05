@@ -77,6 +77,10 @@ func kill():
 		$sprite.play('dead')
 
 
+func slow_down():
+	speed = speed / 2
+
+
 func _process(delta):
 	if alive:
 		var collision = move_and_collide(decide_direction(delta))
@@ -121,7 +125,6 @@ func _on_area_area_entered(area):
 				dish.set_combined_effect(get_effect(), other_npc.get_effect())
 				dish.global_position = area.global_position
 				get_parent().add_child(dish)
-				
 
 
 func _on_disappear_cooldown_timer_timeout():

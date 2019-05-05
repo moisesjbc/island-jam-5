@@ -28,6 +28,8 @@ func process_effect(effect, effect_value):
 		$gui_canvas/gui.update_time(+effect_value)
 	elif effect == 'effect_minus_enemy':
 		get_tree().call_group('NPCs', 'kill')
+	elif effect == 'effect_time_enemy' or 'effect_enemy_time':
+		get_tree().call_group('NPCs', 'slow_down')
 	elif effect == 'effect_plus_enemy':
 		var i = 0
 		while i < effect_value:
