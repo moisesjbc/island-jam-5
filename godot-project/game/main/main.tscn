@@ -24,7 +24,7 @@ rect_scale = Vector2( 1.00128, 1 )
 seconds_remaining = 90
 
 [node name="player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 396.664, 254.126 )
+position = Vector2( 977.294, 554.154 )
 
 [node name="npc_respawn" parent="." instance=ExtResource( 6 )]
 cooldown_time = 2.0
