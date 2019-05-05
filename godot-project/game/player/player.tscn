@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://game/player/player.gd" type="Script" id=1]
 [ext_resource path="res://game/bullet/bullet.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://game/player/Flecha_1.ogg" type="AudioStream" id=9]
 [ext_resource path="res://game/player/430570__cheira__020-grito-de-mujer-glued.wav" type="AudioStream" id=10]
 [ext_resource path="res://game/player/429592__inspectorj__chewing-breadstick-single-c.wav" type="AudioStream" id=11]
+[ext_resource path="res://game/player/Pasos.wav" type="AudioStream" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -85,4 +86,8 @@ volume_db = 1.0
 
 [node name="eat_sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 11 )
+
+[node name="step_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+volume_db = 1.0
 

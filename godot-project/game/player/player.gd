@@ -28,8 +28,13 @@ func move(delta):
 		direction.y -= 1
 	if Input.is_action_pressed("ui_down"):
 		direction.y += 1
+		
+	if (direction.x != 0 or direction.y != 0) and not $step_sound.playing:
+		$step_sound.play()
+	elif (direction.x == 0 and direction.y == 0) and $step_sound.playing:
+		$step_sound.stop()
 	
-	move_and_collide(direction * speed * delta)
+	move_and_collide(direction * speed * delta)	
 
 
 func look_at_mouse():
