@@ -40,4 +40,4 @@ func print_sound_mode():
 	else:
 		sound_mode_label = 'MUTED'
 		
-	$CenterContainer/VBoxContainer/toggle_sound_button.text = "Toggle sound mode [" + sound_mode_label + "]"
+	$CenterContainer/VBoxContainer/toggle_sound_button/label.text = "Toggle sound mode [" + sound_mode_label + "]"
